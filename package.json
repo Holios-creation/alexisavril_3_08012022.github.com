@@ -1,0 +1,19 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./css/style.scss:./css/style.css --style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Holios-creation/alexisavril_3_08012022.github.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Holios-creation/alexisavril_3_08012022.github.com/issues"
+  },
+  "homepage": "https://github.com/Holios-creation/alexisavril_3_08012022.github.com#readme"
+}
