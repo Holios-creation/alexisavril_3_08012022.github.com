@@ -1,0 +1,137 @@
+.chooseCity {
+    form {
+        box-shadow: inset 0px 12px 10px -10px #b5b5b5;
+        width: 100%;
+        height: 50px;
+        background: #eaeaea;
+        text-align: center;
+        div {
+            position:relative;
+            display: inline-block;
+            i {
+                position:absolute;
+                top:15px;
+                left:0;
+                font-size:18px;
+            }
+            input {
+                padding-left:20px;
+                margin-top: 15px;
+                width:165px;
+                background: transparent;
+                border: none;
+                text-align: center;
+            }
+        }
+    }
+    .presentation {
+        margin-top: 0;
+        overflow: hidden;
+        padding: 20px 10% 40px 10%;
+        text-align: center;
+        background: #f6f6f6;
+        @import "./../composants/buttonDegraded";
+    }
+}
+
+.useInstruction {
+    margin-top: 40px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h1 {
+        margin-left: 20px;
+        margin-bottom: 0;
+    }
+    .stage {
+        .number {
+            color: white;
+            background: $primaire;
+            border-radius: 100%;
+            width: 25px;
+            height: 25px;
+            padding: 5px 8px;
+            font-size: 15px;
+            float: left;
+            margin-top: 40px;
+            margin-left: 5%;
+        }
+        .information {
+            width: calc(90% - 12.5px);
+            margin-left: calc(5% + 12.5px);
+            background: #f6f6f6;
+            box-shadow: 0px 5px 10px 4px #e9e9e9;
+            border-radius: 20px;
+            height: 70px;
+            i {
+                margin: 25px;
+                float: left;
+                font-size: 18px;
+                color: #7e7e7e;
+            }
+            h3 {
+                font-weight: 400;
+                font-size: 17px;
+                padding-top: 25px;
+            }
+        }
+        .selected {
+            background: #f5edff !important;
+            i {
+                color: $primaire !important;
+            }
+        }
+    }
+}
+
+.restaurants {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    background: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    h1 {
+        margin-left: 5%;
+        margin-bottom: 0;
+    }
+    .restaurant {
+        position: relative;
+        border-radius: 5px;
+        height: 250px;
+        width: 90%;
+        margin-left: 5%;
+        background: white;
+        box-shadow: 0px 5px 10px 4px #e6e6e6;
+        overflow: hidden;
+        img {
+            object-fit: cover;
+            height: calc(100% - 80px);
+            width: 100%;
+            cursor: pointer;
+        }
+        h2 {
+            font-size: 19px;
+            margin: 10px 0 0 15px;
+            color: black;
+            cursor: pointer;
+        }
+        p {
+            margin: 5px 0 0 15px;
+            color: black;
+            cursor: pointer;
+        }
+        @import "./../composants/buttonLike";
+        .new {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 2px;
+            background: $tertiaire;
+            color: $darkgreen;
+        }
+    }
+}

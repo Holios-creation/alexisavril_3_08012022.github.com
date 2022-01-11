@@ -1,0 +1,29 @@
+i {
+    position: absolute;
+    cursor: pointer;
+}
+.fas {
+    right: 25px;
+    bottom: 35px;
+    font-size: 26px;
+    color: $primaire;
+    display: block;
+    background: -webkit-linear-gradient($primaire, $secondaire);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(0);
+    transition: transform 500ms;
+    transform-origin: 50% 100%;
+    &:hover {
+        transform: scale(1);
+    }
+}
+.far {
+    right: 25px;
+    bottom: 35px;
+    font-size: 26px;
+    color: black;
+    &:hover + .fas {
+        transform: scale(1);
+    }
+}
