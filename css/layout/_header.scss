@@ -5,5 +5,14 @@ header {
     .logo {
         margin-top:15px;
         height: 30px;
+        cursor:pointer;
+    }
+    i {
+        position:absolute;
+        left:20px;
+        top:20px;
+        font-size:20px;
+        cursor:pointer;
+        color:black;
     }
 }

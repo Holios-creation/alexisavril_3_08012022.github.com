@@ -6,14 +6,17 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    padding-top:calc(100% - 20px);
     animation:loader 3s 0s 1 normal forwards;
     h1 {
+        position: absolute;
         visibility:hidden;
         font-family: 'Shrikhand', cursive;
         font-size:40px;
         z-index: 110;
-        margin:0;
+        top: 50%;
+        left: 50%;
+        margin-top:-23px;
+        margin-left:-108px;
         animation:logo 3s 0s 1 normal forwards;
     }
 }
@@ -23,7 +26,7 @@
         visibility: visible;
         background-color:$primaire;
     }
-    50% {
+    60% {
         background-color:$secondaire;
     }
     80% {
@@ -43,7 +46,7 @@
         visibility: visible;
         color:$secondaire;
     }
-    50% {
+    60% {
         color:$primaire;
     }
     80% {
@@ -51,6 +54,7 @@
         opacity:1;
     }
     99% {
+        color:transparent;
         visibility:hidden;
         opacity:0;
     }
