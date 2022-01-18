@@ -1,7 +1,13 @@
 .chooseCity {
     form {
-        box-shadow: inset 0px 12px 10px -10px #b5b5b5;
-        width: 100%;
+        @include media-min(999px) {
+            width: calc(100% - 400px);
+            box-shadow: inset -12px 12px 10px -10px $grey-dark;
+        }
+        @include media-max(999px) {
+            width: 100%;
+            box-shadow: inset 0px 12px 10px -10px $grey-dark;
+        }
         height: 50px;
         background: #eaeaea;
         text-align: center;
@@ -25,22 +31,38 @@
         }
     }
     .presentation {
+        @include media-min(999px) {
+            width: calc(100% - 400px);
+            box-shadow: inset -12px 0px 10px -10px $grey-dark;
+            background: white;
+        }
+        @include media-max(999px) {
+            background: $grey;
+        }
         margin-top: 0;
         overflow: hidden;
         padding: 20px 10% 40px 10%;
         text-align: center;
-        background: $grey;
         @import "./../composants/buttonDegraded";
     }
 }
 
 .useInstruction {
-    margin-top: 40px;
+    @include media-min(999px) {
+        width: 400px;
+        height:100%;
+        position:fixed;
+        right:0;
+        top:20px;
+        padding:0 30px;
+        background:white;
+    }
     margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     h1 {
+        margin-top:20px;
         margin-left: 20px;
         margin-bottom: 0;
     }
@@ -83,55 +105,141 @@
             }
         }
     }
+    .hide {
+        @include media-max(999px) {
+            display:none;
+        }
+    }
+    .new {
+        @include media-max(999px) {
+            display:none;
+        }
+        @include media-min(999px) {
+            overflow:auto;
+            padding:0 5% 0 5%;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        .restaurant {
+            @include media-min(999px) {
+                float:left;
+                width:100%;
+                margin-bottom:20px;
+            }
+            position: relative;
+            border-radius: 5px;
+            height: 250px;
+            background: white;
+            box-shadow: 0px 5px 10px 4px #e6e6e6;
+            overflow: hidden;
+            img {
+                object-fit: cover;
+                height: calc(100% - 80px);
+                width: 100%;
+                cursor: pointer;
+            }
+            h2 {
+                font-size: 19px;
+                margin: 10px 0 0 15px;
+                color: black;
+                cursor: pointer;
+            }
+            p {
+                margin: 5px 0 0 15px;
+                color: black;
+                cursor: pointer;
+            }
+            @import "./../composants/buttonLike";
+            .new {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                padding: 5px 10px;
+                font-size: 14px;
+                border-radius: 2px;
+                background: $tertiaire;
+                color: $darkgreen;
+            }
+        }
+    }
 }
 
-.restaurants {
-    padding-top: 40px;
-    padding-bottom: 60px;
-    background: $grey;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    h1 {
-        margin-left: 5%;
-        margin-bottom: 0;
+#restaurants {
+    @include media-min(999px) {
+        width: calc(100% - 400px);
+        box-shadow: inset -12px 0px 10px -10px $grey-dark;
+        padding:40px 0 60px 0;
     }
-    .restaurant {
-        position: relative;
-        border-radius: 5px;
-        height: 250px;
-        width: 90%;
-        margin-left: 5%;
-        background: white;
-        box-shadow: 0px 5px 10px 4px #e6e6e6;
-        overflow: hidden;
-        img {
-            object-fit: cover;
-            height: calc(100% - 80px);
-            width: 100%;
-            cursor: pointer;
+    @include media-max(999px) {
+        padding:40px 5% 60px 5%;
+    }
+    background: $grey;
+    h1 {
+        margin-bottom: 20px;
+        @include media-min(999px) {
+            padding:0 5% 0 5%;
         }
-        h2 {
-            font-size: 19px;
-            margin: 10px 0 0 15px;
-            color: black;
-            cursor: pointer;
+    }
+    .restaurants {
+        @include media-max(999px) {
+            flex-direction: column;
+            display: flex;
+            gap: 20px;
         }
-        p {
-            margin: 5px 0 0 15px;
-            color: black;
-            cursor: pointer;
+        @include media-min(999px) {
+            overflow:auto;
+            padding:0 5% 0 5%;
         }
-        @import "./../composants/buttonLike";
-        .new {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            padding: 5px 10px;
-            font-size: 14px;
-            border-radius: 2px;
-            background: $tertiaire;
-            color: $darkgreen;
+        .restaurant {
+            @include media-min(999px) {
+                float:left;
+                width:calc(50% - 10px);
+                margin-bottom:20px;
+            }
+            @include media-max(999px) {
+                width:100%;
+            }
+            position: relative;
+            border-radius: 5px;
+            height: 250px;
+            background: white;
+            box-shadow: 0px 5px 10px 4px #e6e6e6;
+            overflow: hidden;
+            img {
+                object-fit: cover;
+                height: calc(100% - 80px);
+                width: 100%;
+                cursor: pointer;
+            }
+            h2 {
+                font-size: 19px;
+                margin: 10px 0 0 15px;
+                color: black;
+                cursor: pointer;
+            }
+            p {
+                margin: 5px 0 0 15px;
+                color: black;
+                cursor: pointer;
+            }
+            @import "./../composants/buttonLike";
+            .new {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                padding: 5px 10px;
+                font-size: 14px;
+                border-radius: 2px;
+                background: $tertiaire;
+                color: $darkgreen;
+            }
+        }
+        a:nth-child(2n) {
+            .restaurant {
+                @include media-min(999px) {
+                    margin-left:20px;
+                }
+            }
         }
     }
 }

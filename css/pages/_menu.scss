@@ -42,14 +42,26 @@
         }
         .plats {
             display:flex;
-            flex-direction: column;
-            gap:10px;
             padding-top:20px;
             padding-bottom:40px;
             visibility:hidden;
+            @include media-max(999px) {
+                flex-direction: column;
+                gap:10px;
+            }
+            @include media-min(999px) {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap:20px;
+            }
             .plat {
+                @include media-max(999px) {
+                    width:100%;
+                }
+                @include media-min(999px) {
+                    width:calc(100% / 3 - 14px);
+                }
                 position:relative;
-                width:100%;
                 overflow:hidden;
                 border-radius:20px;
                 height:67px;
@@ -128,7 +140,7 @@
                 }
                 $number: 4;
                 $time: 1200ms;
-                $animdelay: $time / $number;
+                $animdelay: calc($time / $number);
                 animation:degraded $time 1 normal forwards;
                 @for $i from 1 through $number {
                     &--#{$i} {
